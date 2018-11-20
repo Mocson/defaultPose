@@ -43,3 +43,14 @@ def setDefaultPose():
         mc.setAttr(i + '.rotateX', rx, e=True)
         mc.setAttr(i + '.rotateY', ry, e=True)
         mc.setAttr(i + '.rotateZ', rz, e=True)
+
+def delDefaultPose():
+    sec = mc.ls(ls=True, type='transform')
+
+    for i in sec:
+        mc.deleteAttr(i + '.init_translateX')
+        mc.deleteAttr(i + '.init_translateY')
+        mc.deleteAttr(i + '.init_translateZ')
+        mc.deleteAttr(i + '.init_rotateX')
+        mc.deleteAttr(i + '.init_rotateY')
+        mc.deleteAttr(i + '.init_rotateZ')
